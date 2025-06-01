@@ -110,7 +110,7 @@ def make_spo(uri: str, spo: str, encode=True, limit=999, extra=""):
 @app.post(f"{MOUNT}shmarql/fragments/sparql")
 def fragments_sparql(query: str, results=None):
     if query == "":
-        query = "select * where {?s ?p ?o} limit 10"
+        query = "select * where {?s ?p ?o.} limit 10"
     if results is None:
         results = do_query(query)
 

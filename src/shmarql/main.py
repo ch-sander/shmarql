@@ -205,7 +205,7 @@ def accept_header_to_format(request: Request) -> str:
 @app.get(f"{MOUNT}shmarql/")
 def shmarql_get(
     request: Request,
-    query: str = "select * where {?s ?p ?o} limit 10",
+    query: str = "select * where {?s ?p ?o.} limit 10",
     format: str = None,
 ):
     if format is None:
